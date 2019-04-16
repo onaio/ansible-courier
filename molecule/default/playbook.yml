@@ -3,3 +3,4 @@
   hosts: all
   roles:
     - role: ansible-courier
+      courier_version: "1.2.148"
