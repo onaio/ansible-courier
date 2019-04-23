@@ -26,11 +26,11 @@ def test_courier_app_files(host):
     assert appVersionedDir.user == "courier"
     assert appVersionedDir.group == "courier"
     assert appVersionedDir.is_directory
-    assert oct(appVersionedDir.mode) == "0755"
+    assert oct(appVersionedDir.mode) == "0o755"
 
     envFile = host.file("/home/courier/app/environment")
     assert envFile.exists
     assert envFile.user == "courier"
     assert envFile.group == "courier"
     assert envFile.is_file
-    assert oct(envFile.mode) == "0750"
+    assert oct(envFile.mode) == "0o750"
