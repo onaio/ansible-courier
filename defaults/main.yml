@@ -1,5 +1,8 @@
 ---
 courier_version: "1.2.148"
+courier_bind_address: "127.0.0.1"
+courier_port: 8080
+courier_domain: "example.com"
 courier_package_repository_url: "https://github.com/nyaruka/courier/releases/download"
 # System architecture for the host. Possible value are:
 #   - linux_amd64
@@ -22,5 +25,7 @@ courier_active_package_symlink: "{{ courier_system_home }}/app"
 # https://github.com/nyaruka/courier#rapidpro-configuration
 # for the full list of variables
 courier_environment_vars:
-  COURIER_DOMAIN: "example.com"
+  COURIER_ADDRESS: "{{ courier_bind_address }}"
+  COURIER_PORT: "{{ courier_port }}"
+  COURIER_DOMAIN: "{{ courier_domain }}"
   COURIER_SPOOL_DIR: "{{ courier_system_home }}/spool"
